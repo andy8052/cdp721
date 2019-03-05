@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Web3Provider, { Connectors } from 'web3-react'
+import MyComponent from './MyComponent';
 
+const { MetaMaskConnector } = Connectors
+const metamask = new MetaMaskConnector({ supportedNetworks: [42] })
+const connectors = { metamask }
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Web3Provider connectors={connectors} libraryName="web3.js">
+        <MyComponent />
+      </Web3Provider>
     );
   }
 }
