@@ -49,7 +49,7 @@ function MyComponent() {
         <div id="Finalize">
             <form onSubmit={e => final(e)}>
                 <label>
-                Initialze:
+                Finalize:
                 <input value={cup} onChange={e => setCup(e.target.value)} />
                 </label>
                 <input type="submit" value="Submit" />
@@ -58,7 +58,7 @@ function MyComponent() {
         <div id="Redeem">
             <form onSubmit={e => red(e)}>
                 <label>
-                Initialze:
+                Redeem:
                 <input value={cup} onChange={e => setCup(e.target.value)} />
                 </label>
                 <input type="submit" value="Submit" />
